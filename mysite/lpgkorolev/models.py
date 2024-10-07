@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+# from phone_field import PhoneField
 
 MAX_LINE_LENGTH = 254
 
@@ -48,6 +49,7 @@ class Appointment(models.Model):
     first_name = models.CharField(max_length=MAX_LINE_LENGTH, verbose_name='Имя')
     last_name = models.CharField(max_length=MAX_LINE_LENGTH, verbose_name='Фамилия')
     phone_number = models.CharField(max_length=PHONE_NUMBER_LENGTH, blank=True, verbose_name='Номер телефона')
+    # phone_number = PhoneField(max_length=MAX_LINE_LENGTH, blank=True, help_text='Контактный номер телефона')
     fact_date = models.DateTimeField(verbose_name='Дата и время записи')
 
     def __str__(self):

@@ -19,17 +19,24 @@
 					<h1 class="text-white mb-4">Запись на процедуры</h1>
 					<form method="POST" action="">
 						{% csrf_token %}
-						{{ form.non_field.errors }}
+						<div class="form-error">{{ form.non_field.errors }}</div>
 						<div class="row g-3">
 							<div class="col-12 col-sm-6">{{ form.service }}</div>
+
 							<div class="col-12 col-sm-6">{{ form.specialist }}</div>
-							<div class="col-12 col-sm-6">{{ form.first_name }}</div>
-							<div class="col-12 col-sm-6">{{ form.last_name }}</div>
+
+							<div class="col-12 col-sm-6">{{ form.first_name }}
+								<div class="form-error">{{ form.errors.first_name }}</div>
+							</div>
+							<div class="col-12 col-sm-6">{{ form.last_name }}
+								<div class="form-error">{{ form.errors.last_name }}</div>
+							</div>
+
 							<div class="col-12 col-sm-6">{{ form.phone_number }}</div>
+
 							<div class="col-12 col-sm-6">
-								<div class="datetime" id="datetimepicker" data-target-input="nearest">
-									{{ form.fact_date }}
-								</div>
+								<div class="datetime-local" id="datetimepicker" data-target-input="nearest">
+									{{ form.fact_date }}</div>
 							</div>
 							<div class="col-12">
 								<input class="btn btn-dark w-100 py-3" type="submit" value="Записаться"></input>

@@ -1,9 +1,9 @@
-/********** Template CSS **********/
 :root {
-    --primary: #06A3DA;
+    --primary: #06A3DA06A3DA;
     --secondary: #F57E57;
     --light: #EEF9FF;
-    --dark: #091E3E;
+    --dark: #091E3E; /*#051225;*/
+
 }
 
 h1,
@@ -190,16 +190,15 @@ h6,
 }
 
 .hero-header {
-    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(../img/carousel-1.jpg) center
+    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(../img/car-1.svg) center
     center no-repeat;
-    background-size: cover;
+    background-size: 1920px 1080px;
 }
 
 .bg-appointment {
-    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(../img/carousel-1.jpg) center
-    center
-    no-repeat;
-    background-size: cover;
+    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)),
+    center no-repeat;
+    background-size: contain;
 }
 
 .appointment-form {
@@ -211,6 +210,7 @@ h6,
 .service-item .bg-light h5,
 .team-item .team-text {
     transition: .5s;
+    display: grid;
 }
 
 .service-item:hover img {
@@ -238,8 +238,8 @@ h6,
 }
 
 .bg-offer {
-    background: url(../img/carousel-1.jpg) center center no-repeat;
-    background-size: cover;
+    background: center center no-repeat;
+    background-size: contain;
 }
 
 .offer-text {
@@ -283,8 +283,9 @@ h6,
 }
 
 .bg-testimonial {
-    background: url(../img/carousel-2.jpg) center center no-repeat;
-    background-size: cover;
+    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(../img/car-1.svg) center
+    center no-repeat;
+    background-size: contain;
 }
 
 .testimonial-carousel {
@@ -326,3 +327,75 @@ h6,
     width: 120px;
     height: 120px;
 }
+
+.price-style {
+    border-bottom: 1px;
+    border-bottom: solid;
+    border-bottom-color: #06A3DA;
+}
+
+div.scroll-div {
+
+  height: 70px; /* заданная ширина */
+  overflow-y: scroll; /* автоматическая прокрутка */
+}
+
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left:0;
+    opacity: o;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup__body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.popup__content{
+    background-color: #fff;
+    color: #000;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.8s ease 0s;
+}
+
+.popup__close{
+    position: absolute;
+
+    font-size: 20px;
+    text-decoration: none;
+
+}
+
+.popup__title{
+    font-size: 40px;
+    margin: 0px, 0px, 1em, 0px;
+
+}
+
+.popup__text{}
